@@ -1,0 +1,15 @@
+[settings]
+time_zone = "Europe/Moscow"
+
+[alarm_settings]
+start_time = "10:00"
+end_time = "12:00"
+delay = 30
+time_telling = true
+
+[logging]
+log_level = "DEBUG"
+log_format = "%(asctime)s %(levelname)6s %(name)s: %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+directory = "logs"
+log_file = "app.log"
