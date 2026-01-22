@@ -1,4 +1,5 @@
 __all__ = (
+    "APP_SETTINGS",
     "AlarmClockSettings",
     "AppSettings",
     "LogLevel",
@@ -6,7 +7,6 @@ __all__ = (
     "ProjectSettings",
     "SysSettings",
 )
-
 from .classes import (
     AlarmClockSettings,
     AppSettings,
@@ -15,3 +15,4 @@ from .classes import (
     ProjectSettings,
     SysSettings,
 )
+from .instance import APP_SETTINGS
