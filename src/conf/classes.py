@@ -27,10 +27,19 @@ class BaseSettingsConfig(BaseSettings):
     def settings_customise_sources(
         cls,
         settings_cls: type[BaseSettings],
-        *_kwargs: PydanticBaseSettingsSource,
+        init_settings: PydanticBaseSettingsSource,
+        env_settings: PydanticBaseSettingsSource,
+        dotenv_settings: PydanticBaseSettingsSource,
+        file_secret_settings: PydanticBaseSettingsSource,
     ) -> tuple[PydanticBaseSettingsSource, ...]:
         """Customise sources for settings."""
-        return (TomlConfigSettingsSource(settings_cls),)
+        return (
+            TomlConfigSettingsSource(settings_cls),
+            init_settings,
+            env_settings,
+            dotenv_settings,
+            file_secret_settings,
+        )
 
 
 class SysSettings(BaseModel):
