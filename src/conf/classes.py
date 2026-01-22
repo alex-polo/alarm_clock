@@ -1,4 +1,5 @@
 from datetime import time  # noqa: TC003
+from pathlib import Path
 from typing import Literal
 from zoneinfo import ZoneInfo  # noqa: TC003
 
@@ -71,6 +72,8 @@ class LoggingSettings(BaseModel):
     log_level: LogLevel = "DEBUG"
     log_format: str = "%(asctime)s %(levelname)6s %(name)s: %(message)s"
     log_date_format: str = "%Y-%m-%d %H:%M:%S"
+    directory: Path = Path("logs")
+    log_file: str = "app.log"
 
 
 class AppSettings(BaseSettingsConfig):
