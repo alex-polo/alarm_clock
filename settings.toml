@@ -1,10 +1,16 @@
 [settings]
 time_zone = "Europe/Moscow"
 
-[alarm_settings]
-start_time = "10:00"
-end_time = "12:00"
-delay = 30
+[[alarm.signals]]
+time = "09:40"
+sound = "path to mp3 file"
+repeat = 1
+time_telling = true
+
+[[alarm.signals]]
+time = "09:50"
+sound = "path to mp3 file"
+repeat = 1
 time_telling = true
 
 [logging]
