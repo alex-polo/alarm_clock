@@ -1,4 +1,3 @@
-__all__ = ('start_clock', )
+__all__ = ("start_clock",)
 
 from .main import start_clock
-
