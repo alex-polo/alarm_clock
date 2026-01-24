@@ -1,6 +1,5 @@
 __all__ = (
     "APP_SETTINGS",
-    "AlarmClockSettings",
     "AppSettings",
     "LogLevel",
     "LoggingSettings",
@@ -10,7 +9,6 @@ __all__ = (
 )
 
 from .classes import (
-    AlarmClockSettings,
     AppSettings,
     LoggingSettings,
     LogLevel,

@@ -49,15 +49,6 @@ class SysSettings(BaseModel):
     time_zone: ZoneInfo
 
 
-class AlarmClockSettings(BaseModel):
-    """Alarm clock settings."""
-
-    start_time: time
-    end_time: time
-    delay: int = 30
-    time_telling: bool
-
-
 class ProjectSettings(BaseModel):
     """Pyproject information."""
 
@@ -76,10 +67,25 @@ class LoggingSettings(BaseModel):
     log_file: str = "app.log"
 
 
+class AlarmSignal(BaseModel):
+    """Alarm signal."""
+
+    time: time
+    sound: Path
+    repeat: int
+    time_telling: bool
+
+
+class AlarmSettings(BaseModel):
+    """Alarm settings."""
+
+    signals: list[AlarmSignal]
+
+
 class AppSettings(BaseSettingsConfig):
     """Application settings."""
 
     project: ProjectSettings
     settings: SysSettings
-    alarm_settings: AlarmClockSettings
+    alarm: AlarmSettings
     logging: LoggingSettings = LoggingSettings()
